@@ -44,9 +44,39 @@ import {
 
                 {/* Username Input */}
                 <View style ={styles.usernameUserInputWrapper}>
+                    <TextInput
+                        style = {styles.usernameTextInput}
+                        placeholder = "e.g JohnDoe123"
+                    
+                    />
                      
 
                 </View>
+
+                {/* Password  */}
+                <View style = {styles.passwordWrapper}>
+                    <Text style = {styles.passwordText}>PASSWORD</Text>
+                </View>
+                {/* Password Input */}
+
+                <View style ={styles.passwordUserInputWrapper}>
+                    <TextInput
+                        style = {styles.passwordTextInput}
+                        placeholder = "e.g JohnDoe123"
+                    
+                    />
+                </View>
+                {/* Forgot Password? */}
+                <TouchableOpacity> 
+
+                    <View style = {styles.forgotpasswordWrapper}>
+                        <Text>Forgot Password?</Text> 
+
+                    </View>
+
+                </TouchableOpacity>
+
+
 
 
 
@@ -80,22 +110,57 @@ const styles = StyleSheet.create({
         color: '#FDE0B3'
     },
     usernameUserInputWrapper: {
-        flex: 1, 
-        flexDirection: 'row', 
-        marginTop: 26, 
-        marginLeft: 86,
-        marginRight: 50, 
-        paddingVertical: 10, 
+        marginTop: 4, 
+        marginHorizontal: 88, 
+        backgroundColor: 'transparent', 
+        paddingVertical:5, 
         borderBottomColor: '#FDE0B3', 
         borderBottomWidth: 1, 
+
         
 
     },
     usernameTextInput : {
-        fontSize : 10,  
+        fontSize : 12,  
         fontFamily: 'Roboto_500Medium', 
         color: 'white',
        
+
+    },
+    passwordWrapper :{
+        marginTop : 60, 
+        marginHorizontal: 88, 
+
+    },
+
+    passwordText : {
+        fontSize : 10,  
+        fontFamily: 'Roboto_500Medium', 
+        "lineHeight": 18,
+        color: '#FDE0B3',
+    }, 
+
+    passwordUserInputWrapper:{
+        marginTop: 4, 
+        marginHorizontal: 88, 
+        backgroundColor: 'transparent', 
+        paddingVertical:5, 
+        borderBottomColor: '#FDE0B3', 
+        borderBottomWidth: 1, 
+
+    },
+
+    passwordTextInput: {
+        fontSize : 12,  
+        fontFamily: 'Roboto_500Medium', 
+        color: 'white',
+    },
+
+    forgotpasswordWrapper: {
+        
+       
+
+
 
     },
 
