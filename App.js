@@ -12,9 +12,14 @@ export default function App() {
           colors={["#F5ECDE", "#FFDAA3"]}
           style={styles.signUpContainer}
         >
-          <TouchableOpacity>
-            <Text>Sign Up</Text>
-          </TouchableOpacity>
+          <View>
+            <TouchableOpacity>
+              <Text style={styles.button}>Sign Up</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={styles.button}>Login</Text>
+            </TouchableOpacity>
+          </View>
         </LinearGradient>
       </View>
     </View>
@@ -35,5 +40,12 @@ const styles = StyleSheet.create({
   signUpContainer: {
     width: 400,
     height: 400,
+  },
+  buttonContainer: {},
+  button: {
+    height: 20,
+    width: 200,
+    borderRadius: 10,
+    backgroundColor: "white",
   },
 });
