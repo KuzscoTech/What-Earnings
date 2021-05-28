@@ -7,11 +7,15 @@ export default function App() {
   return (
     <View style={styles.frame}>
       <View style={styles.logo}>
-        <Logo />
+        <Logo style={{ marginBottom: 30 }} />
         <LinearGradient
           colors={["#F5ECDE", "#FFDAA3"]}
           style={styles.signUpContainer}
-        ></LinearGradient>
+        >
+          <TouchableOpacity>
+            <Text>Sign Up</Text>
+          </TouchableOpacity>
+        </LinearGradient>
       </View>
     </View>
   );
@@ -25,12 +29,11 @@ const styles = StyleSheet.create({
     position: "relative",
     height: 736,
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "flex-end",
     alignItems: "center",
-    top: 100,
   },
   signUpContainer: {
     width: 400,
-    height: 700,
+    height: 400,
   },
 });
