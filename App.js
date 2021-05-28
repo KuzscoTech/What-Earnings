@@ -1,22 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import Logo from "./src/resources/logo";
+import React from "react";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function App() {
   return (
     <View style={styles.frame}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <View style={styles.logo}>
+        <Logo />
+        <LinearGradient
+          colors={["#F5ECDE", "#FFDAA3"]}
+          style={styles.signUpContainer}
+        ></LinearGradient>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   frame: {
-    position: "relative", 
-    width: 414,
-    height: 736, 
-    backgroundColor: "#F5ECDE", 
-    
+    backgroundColor: "#F5ECDE",
+  },
+  logo: {
+    position: "relative",
+    height: 736,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    top: 100,
+  },
+  signUpContainer: {
+    width: 400,
+    height: 700,
   },
 });
