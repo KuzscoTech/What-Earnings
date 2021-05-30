@@ -73,7 +73,7 @@ export default function onOpen ({ navigation }){
 
                 {/* Sign Up */}
 
-                <TouchableOpacity style = {styles.signUpWrapper}>
+                <TouchableOpacity style = {styles.signUpWrapper} onPress = {() => navigation.navigate('signUp')}>
                     <View>
                         <Text style = {styles.signUpText}> 
                              SIGN UP 
