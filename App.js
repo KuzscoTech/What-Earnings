@@ -1,44 +1,61 @@
-import 'react-native-gesture-handler'; 
-import * as React from 'react'; 
-import { View, Text } from 'react-native'; 
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import "react-native-gesture-handler";
+import * as React from "react";
+import { useState, useEffect, useMemo } from "react";
+import { View, Text, ActivityIndicator } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
 
+import Wallet from "./src/Pages/wallet";
+import { AuthContext } from "./components/context";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import MainStackScreen from "./src/Pages/mainStack";
 
-import onOpen from './components/onOpen'; 
-import Login from './components/Login'; 
-import signUp from './components/signUp'; 
+const Drawer = createDrawerNavigator();
 
+function App() {
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [userToken, setUserToken] = React.useState(null);
 
-const Stack = createStackNavigator();
+  const authContext = React.useMemo(() => ({
+    signIn: () => {
+      setUserToken("fkjk");
+      setIsLoading(false);
+    },
+    signOut: () => {
+      setUserToken(null);
+      setIsLoading(false);
+    },
+    signUp: () => {
+      setUserToken("fkjk");
+      setIsLoading(false);
+    },
+  }));
 
-export default function App() {
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <ActivityIndicator size="large" />
+      </View>
+    );
+  }
   return (
-    <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen
-        name="onOpen"
-        component={onOpen}
-        options = {{
-          headerShown: false,
-        }}
-        />
-      <Stack.Screen
-        name="Login"
-        component={Login}
-        options = {{
-          headerShown: false,
-        }}
-        />
-        <Stack.Screen
-        name="signUp"
-        component={signUp}
-        options = {{
-          headerShown: false,
-        }}
-        />
-    </Stack.Navigator>
-  </NavigationContainer>
+    <AuthContext.Provider value={authContext}>
+      <NavigationContainer>
+        {userToken !== null ? (
+          <Drawer.Navigator>
+            <Drawer.Screen name="wallet" component={Wallet} />
+          </Drawer.Navigator>
+        ) : (
+          <MainStackScreen />
+        )}
+      </NavigationContainer>
+    </AuthContext.Provider>
   );
 }
 
+export default App;
