@@ -1,5 +1,7 @@
 # What-Earnings
-
+![image](https://user-images.githubusercontent.com/43105808/126842396-5e3f9e31-3dd4-44fd-be4b-565ca458a1ae.png)
+![image](https://user-images.githubusercontent.com/43105808/126842427-c5d5a016-517e-4e87-9f73-20900e9e6cff.png)
+https://www.youtube.com/watch?v=DTJ5l7uvJZw
 Inspiration
 My father is someone who is deeply in love with the stock market, sadly due to his lack of upbringing and new generation technology he is not able to retain enough of the information he had studied about indicators and stock patterns and was always losing in the market. So to ease my fathers struggles we decided to create this app which would give elderly, and those with bad memories a chance to feel the thrill of the market.
 
